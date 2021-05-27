@@ -1,0 +1,167 @@
+﻿@model Assesment
+<div class="accordion" id="accordionExample">
+    <form method="post">
+        <div class="card">
+            <div style="padding: 29px; font-size: 21px; font-weight: 500; font-family: cursive;">
+
+                Are you currently or have you in the past 14 days experienced any of the following symptoms:
+
+            </div>
+            <div class="card-header" id="headingOne">
+                <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Have you/Has the patient been diagnosed with, tested for, or suspected of having COVID-19?
+                    </button>
+                </h2>
+            </div>
+
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+                <div class="card-body" style="padding-left:45px">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" asp-for="Q1" value="true" checked>
+                        <label class="form-check-label" for="gridRadios1">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" asp-for="Q1" value="false">
+                        <label class="form-check-label" for="gridRadios2">
+                            No
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingTwo">
+                <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        In the last 14 days, have you/has the patient had close contact with a person who is diagnosed with or suspected of having COVID-19?
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                <div class="card-body" style="padding-left:45px">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" asp-for="Q2" value="true" checked>
+                        <label class="form-check-label" for="gridRadios1">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" asp-for="Q2" value="false">
+                        <label class="form-check-label" for="gridRadios2">
+                            No
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        In the last 14 days, have you/has the patient traveled internationally?
+
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body" style="padding-left:45px">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" asp-for="Q3" value="true" checked>
+                        <label class="form-check-label" for="gridRadios1">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" asp-for="Q3" value="false">
+                        <label class="form-check-label" for="gridRadios2">
+                            No
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-header" id="headingThree">
+                <h2 class="mb-0">
+                    <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        Are you currently or have you in the past 14 days experienced any of the following symptoms:
+
+                    </button>
+                </h2>
+            </div>
+            <div id="collapseFour" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                <div class="card-body">
+                    <ul style="list-style:none">
+                        <li>
+                            <div class="form-group form-check" style="height:10px">
+                                <input type="checkbox" class="form-check-input" asp-for="Fever" value="true">
+                                <label class="form-check-label" for="exampleCheck1">Fever</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-group form-check" style="height:10px">
+                                <input type="checkbox" class="form-check-input" asp-for="Cough" value="true">
+                                <label class="form-check-label" for="exampleCheck1">Cough</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-group form-check" style="height:10px">
+                                <input type="checkbox" class="form-check-input" asp-for="Sorethroat" value="true">
+                                <label class="form-check-label" for="exampleCheck1">Sore throat</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-group form-check" style="height:10px">
+                                <input type="checkbox" class="form-check-input" asp-for="Shortnessofbreath" value="true">
+                                <label class="form-check-label" for="exampleCheck1"> Shortness of breath</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-group form-check" style="height:10px">
+                                <input type="checkbox" class="form-check-input" asp-for="Difficultybreathing" value="true">
+                                <label class="form-check-label" for="exampleCheck1">Difficulty breathing</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-group form-check" style="height:10px">
+                                <input type="checkbox" class="form-check-input" asp-for="Chills" value="true">
+                                <label class="form-check-label" for="exampleCheck1">Chills</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-group form-check" style="height:10px">
+                                <input type="checkbox" class="form-check-input" asp-for="Musclepain" value="true">
+                                <label class="form-check-label" for="exampleCheck1">Muscle pain</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-group form-check" style="height:10px">
+                                <input type="checkbox" class="form-check-input" asp-for="Headache" value="true">
+                                <label class="form-check-label" for="exampleCheck1">Headache</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-group form-check" style="height:10px">
+                                <input type="checkbox" class="form-check-input" asp-for="GIsymptoms" value="true">
+                                <label class="form-check-label" for="exampleCheck1">GI symptoms</label>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="form-group form-check" style="height:10px">
+                                <input type="checkbox" class="form-check-input" asp-for="Losstasteorsmell" value="true">
+                                <label class="form-check-label" for="exampleCheck1">New loss of taste or smell</label>
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="card-footer">
+                    <button>submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

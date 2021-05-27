@@ -24,13 +24,73 @@ a {
   border-color: #1861ac;
 }
 
+/*--------home---------------------------*/
+.image-section {
+    border-radius:10px;
+    overflow:hidden;
+}
+article-section {
+    border-radius:10px;
+    overflow:hidden;
+}
+.qust {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 0px;
+}
+.report-home-text {
+    float: right;
+    font-size: 40px;
+    font-weight: 600;
+}
+.modebar {
+    display:none;
+}
+.dt-button {
+    border: 1px solid;
+    border-radius: 3px;
+    padding: 3px 13px;
+}
+.current {
+    padding: 4px 12px;
+    border-radius: 30px;
+    background: #94a1b5;
+}
+}
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
   font-size: 14px;
 }
+
+.flex-container {
+    display: flex;
+    width: 100%;
+    align-items: stretch;
+   
+}
+
+    .flex-container > div {
+        margin: 10px;
+        text-align: center;
+
+    }
+
+.authx:hover .auth-con{
+    display:block;
+}
+.auth-con {
+    width: 220px;
+    height: 184px;
+    background: #859090;
+    position: fixed;
+    z-index: 35;
+    padding: 28px;
+    margin: 48px -58px;
+    display:none
+}
 @media (min-width: 768px) {
-  html {
+    html {
     font-size: 16px;
   }
 }
@@ -59,8 +119,10 @@ html {
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    background: #c4cbd2;
+    
 }
 .footer {
   position: absolute;
@@ -68,4 +130,7 @@ body {
   width: 100%;
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
+}
+.dt-buttons{
+    display:inline-block
 }

@@ -1,0 +1,354 @@
+﻿@*<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Link</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav flex-grow-1">
+                <li class="nav-item">ccvbj</li>
+            </ul>
+        </div>
+
+    </nav>*@
+
+<div>
+    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h3 id="title"></h3>
+                    <p id="data"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Understood</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@*-----------------------------------*@
+
+
+@*-----------------------------------*@
+<div style="width:100%;padding: 1px 30px;">
+    <div class="row" style="margin-bottom: 10px; border-bottom: 1px solid #b9afaf; padding: 6px;">
+        <div class="col-8" style="display: flex; align-items: center; font-size: 27px; font-weight: 600;">
+            OCTAMS
+        </div>
+        <div class="col-4" style="display: flex; align-items: center; justify-content: flex-end;">
+        @*<img src="https://www.desicomments.com/dc3/19/439319/4393191.jpg" style="width:50px; height:50px; border-radius:50px;float:right;"/>*@
+        Logout : ksanjiv@gmail.com <button class="btn btn-link" ><i class="bi bi-box-arrow-right"style="font-size: 23px; color: blue;" ></i></button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-2" style="padding:0;background:white;">
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <a style="border-radius: 0;" class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
+                <a style="border-radius: 0;" class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Articles</a>
+                <a style="border-radius: 0;" class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Stories</a>
+                <a style="border-radius: 0;" class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Questions</a>
+                <a style="border-radius: 0;" class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-users" role="tab" aria-controls="v-pills-settings" aria-selected="false">Users</a>
+                <a style="border-radius: 0;" class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-volt" role="tab" aria-controls="v-pills-settings" aria-selected="false">Volunteers</a>
+            </div>
+        </div>
+        <div class="col-10">
+
+            <div class="tab-content" id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    Articles
+                                </div>
+                                <div class="card-body">
+                                    <i class="bi bi-book" style="font-size: 40px;"></i> <p class="report-home-text" id="article"> @ViewBag.Stories.Count </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    Stories
+                                </div>
+                                <div class="card-body">
+                                    <i class="bi bi-card-text" style="font-size: 40px;"></i><p class="report-home-text" id="story"> @ViewBag.Stories.Count</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    Questions
+                                </div>
+                                <div class="card-body">
+                                    <i class="bi bi-chat-right-text" style="font-size: 40px;"></i><p class="report-home-text" id="question"> @ViewBag.Questions.Count</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <br />
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    Users
+                                </div>
+                                <div class="card-body">
+                                    <i class="bi bi-people-fill" style="font-size: 40px;"></i><p class="report-home-text" id="user">  @ViewBag.Users.Count</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="card">
+                                <div class="card-header">
+                                    Volunteers
+                                </div>
+                                <div class="card-body">
+                                    <i class="bi bi-person-badge" style="font-size: 40px;"></i><p class="report-home-text" id="volunteer"> @ViewBag.Volunteers.Count</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div><br />
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header">
+                                    CHART
+                                </div>
+                                <div class="card-body">
+                                    <div id="tester" style="width:100%;height:250px;display:contents"></div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                    <div class="card">
+                        <div class="card-header">
+                            Articles
+                        </div>
+                        <div class="card-body">
+                            <table id="exampleTable1" class="display" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>Title</th>
+                                        <th>Article</th>
+                                        <th>UID</th>
+
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    @{
+                                        if (ViewBag.Articles != null)
+                                        {
+                                            foreach (Articles at in ViewBag.Articles)
+                                            {
+
+                                                <tr>
+                                                    <td>@at.Title</td>
+                                                    <td>@Html.Raw(at.Article)</td>
+                                                    <td>@at.Uid</td>
+
+                                                </tr>
+                                            }
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                    <div class="card">
+                        <div class="card-header">
+                            Stories
+                        </div>
+                        <div class="card-body">
+                            <table id="exampleTable" class="display" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>Author</th>
+                                        <th>Story</th>
+                                        <th>UID</th>
+                                        <th>Actions</th>
+
+                                    </tr>
+                                </thead>
+
+                                <tbody id="story">
+                                    @{
+                                        if (ViewBag.Stories != null)
+                                        {
+                                            foreach (Story st in ViewBag.Stories)
+                                            {
+
+                                                <tr>
+                                                    <td>@st.Author</td>
+                                                    <td>@st.Storie</td>
+                                                    <td>@st.Uid</td>
+                                                    <td>
+                                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+                                                            view
+                                                        </button>
+
+                                                    </td>
+
+                                                </tr>
+                                            }
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                    <div class="card">
+                        <div class="card-header">
+                            Questions
+                        </div>
+                        <div class="card-body">
+                            <table id="exampleTable2" class="display" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>Question</th>
+                                        <th>Answer</th>
+                                        <th>UID</th>
+
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    @{
+                                        if (ViewBag.Questions != null)
+                                        {
+                                            foreach (Questions qt in ViewBag.Questions)
+                                            {
+
+                                                <tr>
+                                                    <td>@qt.Question</td>
+                                                    <td>@qt.Answer</td>
+                                                    <td>@qt.Uid</td>
+
+                                                </tr>
+                                            }
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-users" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                    <div class="card">
+                        <div class="card-header">
+                            Users
+                        </div>
+                        <div class="card-body">
+                            <table id="exampleTable3" class="display" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Phone</th>
+                                        <th>Email</th>
+                                        <th>IS Doctor</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    @{
+                                        if (ViewBag.Users != null)
+                                        {
+                                            foreach (Register rg in ViewBag.Users)
+                                            {
+
+                                                <tr>
+                                                    <td>@rg.Name</td>
+                                                    <td>@rg.Phone</td>
+                                                    <td>@rg.Email</td>
+                                                    <td>@rg.IsDoctor</td>
+                                                </tr>
+                                            }
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="v-pills-volt" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                    <div class="card">
+                        <div class="card-header">
+                            Volunteers
+                        </div>
+                        <div class="card-body">
+                            <table id="exampleTable4" class="display" style="width:100%">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Number</th>
+                                        <th>Email</th>
+                                        <th>Address</th>
+                                        <th>City</th>
+                                        <th>State</th>
+                                        <th>Pin Code</th>
+                                        <th>Job</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    @{
+                                        if (ViewBag.Volunteers != null)
+                                        {
+                                            foreach (Volunteer vl in ViewBag.Volunteers)
+                                            {
+
+                                                <tr>
+                                                    <td>@vl.Name</td>
+                                                    <td>@vl.Number</td>
+                                                    <td>@vl.Email</td>
+                                                    <td>@vl.Address</td>
+                                                    <td>@vl.City</td>
+                                                    <td>@vl.State</td>
+                                                    <td>@vl.Zip</td>
+                                                    <td>@vl.Job</td>
+                                                </tr>
+                                            }
+                                        }
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

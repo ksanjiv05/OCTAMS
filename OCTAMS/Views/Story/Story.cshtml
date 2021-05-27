@@ -1,0 +1,105 @@
+﻿@using System.Security.Claims
+@model Story
+
+
+
+<div class="container">
+    <!-- Content here -->
+    <div class="container-md">
+
+
+        @{
+
+            if (User.Identity.IsAuthenticated)
+            {
+                <button type="button" class="btn btn-success btn-lg btn-block" data-toggle="modal" data-target="#staticBackdrop">
+                    Write Your Story
+                </button>
+            }
+            else
+            {
+                <button type="button" class="btn btn-info btn-lg btn-block">
+                    <a class="nav-link" style="color:white" asp-area="" asp-action="Login" asp-controller="Auth"> Please Login to Write Story</a>
+                </button>
+            }
+
+        }
+
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <form method="post">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="exampleFormControlTextarea1">Write Your Story</label>
+                                <textarea class="form-control" asp-for="Storie" placeholder="Please describe within 250 words.." rows="3">
+                                
+                            </textarea>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary" id="liveToastBtn">Add Story</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br />
+    <div class="container-md">
+        <div>
+            @{
+
+                foreach (Story st in ViewBag.StoryData)
+                {
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h6 class="card-subtitle mb-2 text-muted">@st.Author</h6>
+                            @{
+                                @using (Html.BeginForm("UpdateStory", "Story", FormMethod.Post))
+                                {
+                                    <input type="hidden" asp-for="Id" value="@st.Id" />
+                                    <textarea class="form-control" id="@st.Id" name="Storie" disabled>@st.Storie</textarea>
+                                    <br />
+
+
+                                    @if (User.Identity.IsAuthenticated)
+                                    {
+
+                                        <div>
+                                            <button type="button" class="btn btn-info" onclick="editStory('@st.Id', '@st.Storie')"><i class="bi bi-pencil-square"></i></button>
+                                            <button type="submit" class="btn btn-success">
+                                                Update
+                                            </button>
+
+                                            <a asp-action="Delete" asp-controller="Story" asp-route-ID="@st.Id"
+                                               class="btn btn-danger"><i class="bi bi-trash"></i></a>
+
+                                        </div>
+                                    }
+                                }
+
+
+                            }
+
+                            
+                        </div>
+                    </div>
+                    <br />
+                }
+            }
+
+        </div>
+    </div>
+</div>
